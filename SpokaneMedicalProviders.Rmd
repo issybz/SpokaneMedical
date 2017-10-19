@@ -71,6 +71,8 @@ library(ggplot2)
 ```{r}
 ggplot(Genderstudy,aes(x=Number.of.Services,y=Number.of.Distinct.Medicare.Beneficiary.Per.Day.Services)) + geom_point(shape=1) + facet_grid(Gender.of.the.Provider ~ .) + labs(list(title = "Number of Services & Number of Distinct Medicare Beneficiary Per Day Services for Gender", x = "# of Services", y = "# of Distinct Beneficiary Services(per day)"))
 ```
+
+
 Results: Female and Male providors have a similar pattern in performing beneficiary services. The majority of services performed tend to be beneficary services for both genders.
 
 
@@ -78,6 +80,7 @@ Results: Female and Male providors have a similar pattern in performing benefici
 ```{r}
 ggplot(Genderstudy,aes(x=Number.of.Services,y=Average.Medicare.Allowed.Amount)) + geom_point(shape=1) + facet_grid(Gender.of.the.Provider ~ .)+ labs(list(title = "Number of Services & Average Medicare Allowed Amount for Gender", x = "# of Services", y = "Medicare Allowed(mean)"))
 ```
+
 Results: More men providors perform services in which medicare is allowed compared to women.
 
 ## Comparing Number of Services with Average Submitted Charge Amount against Gender.
@@ -89,6 +92,8 @@ ggplot(Genderstudy,aes(x=Number.of.Services,y=Average.Submitted.Charge.Amount)) 
 ```{r}
 ggplot(Genderstudy,aes(x=Number.of.Services,y=Average.Medicare.Payment.Amount)) + geom_point(shape=1) + facet_grid(Gender.of.the.Provider ~ .)+ labs(list(title = "Number of Services & Average Medicare Payment Amount for Gender", x = "# of Services", y = "Medicare Payment(mean)"))
 ```
+
+
 Results: The amount of Submited charge my patients is much lower than what is actually paid by Medicare. Applicant's tended to submit between 0 and 5,000 but were only covered for 2,000 or less. Those people with many procedures submitted lower charges and were covered more next to nothing. 
 
 
@@ -96,6 +101,8 @@ Results: The amount of Submited charge my patients is much lower than what is ac
 ```{r}
 ggplot(Genderstudy,aes(x=Number.of.Services,y=Average.Medicare.Standardized.Amount)) + geom_point(shape=1) + facet_grid(Gender.of.the.Provider ~ .)+ labs(list(title = "Number of Services & Average Medicare Standaradized Amount for Gender", x = "# of Services", y = "Standard Medicare(mean)"))
 ```
+
+
 Similar results to Medicare Payment.
 
 
@@ -106,6 +113,8 @@ Similar results to Medicare Payment.
 ```{r}
 ggplot(Genderstudy,aes(x=Number.of.Distinct.Medicare.Beneficiary.Per.Day.Services, y=Average.Medicare.Allowed.Amount)) + geom_point(shape=1) + facet_grid(Gender.of.the.Provider ~ .)+ labs(list(title = "Number of Distinct Medicare Beneficiary Per Day Services & Average Medicare Standardized Amount for Gender", x = "# of Distinct Beneficiary Services(per day)", y = "Standard Medicare(mean)"))
 ```
+
+
 Results: Procedures covered by Medicare tend to have a greater number of participants than number of services not covered my medicare. There is a higher concentration of male providors that provide services for people that have medicare. 
 
 ##Comparing Number of Distinct Medicare Beneficiary Per Day Services with Average Submitted Charge Amount against Gender.
@@ -118,12 +127,16 @@ ggplot(Genderstudy,aes(x=Number.of.Distinct.Medicare.Beneficiary.Per.Day.Service
 ```{r}
 ggplot(Genderstudy,aes(x=Number.of.Distinct.Medicare.Beneficiary.Per.Day.Services, y=Average.Medicare.Payment.Amount)) + geom_point(shape=1) + facet_grid(Gender.of.the.Provider ~ .)+ labs(list(title = "Number of Distinct Medicare Beneficiary Per Day Services & Average Medicare Payment Amount for Gender", x = "# of Distinct Beneficiary Services(per day)", y = "Medicare Payment(mean)"))
 ```
+
+
 Results: More beneficiary services are provided my males. There is once again a much greater number of submitted charges to Medicare payment than what is actually covered by Medicare. 
 
 ##Comparing Number of Distinct Medicare Beneficiary Per Day Services with Average Medicare Standardized Amount against Gender.
 ```{r}
 ggplot(Genderstudy,aes(x=Number.of.Distinct.Medicare.Beneficiary.Per.Day.Services, y=Average.Medicare.Standardized.Amount)) + geom_point(shape=1) + facet_grid(Gender.of.the.Provider ~ .)+ labs(list(title = "Number of Distinct Medicare Beneficiary Per Day Services & Average Medicare Standardized Amount for Gender", x = "# of Distinct Beneficiary Services(per day)", y = "Standarized Medicare(mean)"))
 ```
+
+
 Results: Higher number of average standardized medicare amount for male providors. Male providors tend to perform more procedures per day. 
 
 #Average Medicare Allowed Amount Comparisons
@@ -132,12 +145,16 @@ Results: Higher number of average standardized medicare amount for male providor
 ```{r}
 ggplot(Genderstudy,aes(x=Average.Medicare.Allowed.Amount, y=Average.Submitted.Charge.Amount)) + geom_point(shape=1) + facet_grid(Gender.of.the.Provider ~ .)+ labs(list(title = "Average Medicare Allowed Amount & Average Submitted Charge Amount for Gender", x = "Medicare Allowed(mean)", y = "Submitted Charge(mean)"))
 ```
+
+
 Results: Patients with higher amounts of Medicare allowed tend to submit a higher charge. There is a positive correlation between these variables. 
 
 ##Comparing Average Medicare Allowed Amount with Average Medicare Payment Amount against Gender.
 ```{r}
 ggplot(Genderstudy,aes(x=Average.Medicare.Allowed.Amount, y=Average.Medicare.Payment.Amount)) + geom_point(shape=1) + facet_grid(Gender.of.the.Provider ~ .)+ labs(list(title = "Average Medicare Allowed Amount & Average Medicare Payment Amount for Gender", x = "Medicare Allowed(mean)", y = "Medicare Payment(mean)"))
 ```
+
+
 Results: The amount of Medicare Allowed correlates to the Medicare payment for each applicant. The majority of these procedures are performed by males. 
 
 ##Comparing Average Medicare Allowed Amount with Average Medicare Standardized Amount against Gender.
@@ -157,12 +174,16 @@ ggplot(Genderstudy,aes(x=Average.Submitted.Charge.Amount,y=Average.Medicare.Paym
 ```{r}
 ggplot(Genderstudy,aes(x=Average.Submitted.Charge.Amount,y=Average.Medicare.Standardized.Amount)) + geom_point(shape=1) + facet_grid(Gender.of.the.Provider ~ .)+ labs(list(title = "Average Submitted Charge Amount & Average Medicare Standardized Amount for Gender", x = "Submitted Charge(mean)", y = "Standardized Medicare(mean)"))
 ```
+
+
 Results: Displayed more clearly, the amount of charge sumbitted to be paid by Medicare is significantly less. There exists a someone possitive relationship between the variables indicating that the higher the submitted charge the higher the amount Medicare will cover. 
 
 # Average Medicare Payment and Average Medicare Standardized Amount
 ```{r}
 ggplot(Genderstudy,aes(x=Average.Medicare.Payment.Amount,y=Average.Medicare.Standardized.Amount)) + geom_point(shape=1) + facet_grid(Gender.of.the.Provider ~ .)+ labs(list(title = "Average Medicare Payment Amount & Average Medicare Standardized Amount for Gender", x = "Medicare Payment(mean)", y = "Standardized Medicare(mean)"))
 ```
+
+
 Results: Another possitive correlation between variables. This shows the standarized medicare amount trends along side the medicare payment varaible. 
 
 
@@ -183,8 +204,9 @@ Providerstudy=providerspokane %>% select( Provider.Type, Number.of.Distinct.Medi
 ```
 
 ```{r}
-ggplot(Providerstudy, aes(x= reorder(Provider.Type, Average.Medicare.Allowed.Amount),  Average.Medicare.Allowed.Amount)) + geom_bar(stat="identity", alpha=.60)+coord_flip() + labs(list(title = "Type of Provider and the Average Amount of Medicare Allowed ", x = "Provider Type", y = "Average Medicare Allowed Amount"))
+ggplot(Providerstudy, aes(x= reorder(Provider.Type, Average.Medicare.Allowed.Amount),  Average.Medicare.Allowed.Amount))  + geom_bar(stat="identity", alpha=.60)+coord_flip() + labs(list(title = "Type of Provider and the Average Amount of Medicare Allowed ", x = "Provider Type", y = "Average Medicare Allowed Amount"))
 ```
+
 
 Diagnostic radiology has the highest medicare amount allowed. Diagnostic radiology includes MRI, CT, x-ray, and ultra-sound scans that are commonly used everyday, thus the high medicare allowed fits. Ambulatory Surgery Center is ranked 2nd for the highest medicare allowed and accounts for same day sugical care, many diagnostic and preventive procedures. Many of these come in through the ER, which is extremely busy on a day-to-day basis. Some of the providers that do not allow high medicare coverage include: Plastic and Recontructive Surgery, Hospice and Pallitive Care, Geriatric Medicine, and Mammogram Screening Center. High percentages of plastic surgery is elective, so it is logical that it is low. But it is suprising to see hospice and pallitive care and geriatric medicine having such low medicare allowed comparitiveley, as medicare is colloquially known as a federal program for helping older people's medical fees. Mammograms cost approxiametely $100, so overall, it needs less medicare to go towards it comparatively. 
 
@@ -201,6 +223,7 @@ ggplot(data = meancharge, aes(x = mean.charge.amount, y = Provider.Type)) +
 geom_point() + labs(list(title = "Type of Provider and the Mean of Average Submitted Charge Amounts", x = "Mean Submitted Charge Amounts", y = "Provider Type"))
 ```
 
+
 Looking at the graph, it is not surprising that ambulance Service Supplier has the highest mean charge amount with the high costs of ambulances yet the cost of an ambulance higher than $2,500 is this incredibly high. The next highest is the Ambulatory Sugery Center, which deals with day to day surgerys. It is notable that the mean cost of an ambulance is higher than the mean cost of most surgerys. Cardiac Surgeries is the third highest submitted charge amount, which can be justified by the high skill necessary and high risk of heart surgeries. The IQR settles mostly between 25 and 750 dollars. 
 
 
@@ -210,6 +233,8 @@ meandistinctperdayservices=Providerstudy%>%group_by(Provider.Type)%>%summarize(m
 ggplot(meandistinctperdayservices, aes(x = mean.perday.services, y = Provider.Type)) + geom_point() + labs(list(title = "Type of Provider and the Number of Distinct Medicare Beneficiary Per Day Services", x = "Mean of Number of Distince Medicare Beneficiary Per Day Services", y = "Provider Type"))
 ```
 
+
+
 The mean number of distinct medicare beneficiaries per day services is concentrated in the 0-250 range, with outliars of Clinical labratories above 1750, and Ambulance Service Provider upwards of 2250, almost at 2500. 
 
 To look more closely on the groupings we excluded the outliers in the following graph.
@@ -217,6 +242,8 @@ To look more closely on the groupings we excluded the outliers in the following 
 ```{r}
 ggplot(meandistinctperdayservices, aes(x = mean.perday.services, y = Provider.Type)) + geom_point() + xlim(0,500) + labs(list(title = "Type of Provider and the Number of Distinct Medicare Beneficiary Per Day Services", x = "Mean of Number of Distince Medicare Beneficiary Per Day Services", y = "Provider Type"))
 ```
+
+
 The above graph shows that most types of providers will perform be in the range of 25-125 beneficiary services per day. 
 
 ```{r}
@@ -238,10 +265,12 @@ geom_point()  + labs(list(title = "Type of Provider and the Number of Services",
 ```
 
 In the next graph I excluded Ambulance Service Supplier, because of it was an outlier. 
+
 ```{r}
 ggplot(data = numberofservices, aes(x = mean.services, y = Provider.Type)) +
 geom_point()  + labs(list(title = "Type of Provider and the Number of Services", x = "Mean of Number Services", y = "Provider Type")) + xlim(0, 2250)
 ```
+
 
 Hematology and Oncology, which is the specialization in blood deseases and cancer, have high number of services, along with Clinical Labratory, which is the tests that are run to learn more about the patient. The IRQ falls mostly into the range of 5-45 services. This making the number of tests able to run in Clinical Labratory at higher than 2,000 shocking.  
 
@@ -252,11 +281,13 @@ Hematology and Oncology, which is the specialization in blood deseases and cance
 ```{r}
 head(Placestudy)
 ```
+
 We want to compare the number of services variable to the number of beneficiary services variables regarding aver medicare payment submitted and the amount actually charged. In order to do this, we will create four facet graphs per varaiable to display potential differences.
 
 The place of service variable identifies whether the service was performed at a facility or non facility. A facility is usually a hospital, or ambulance but can include facilities suck as a hospice, a skilled nursing facility or a community mental health center. For a more in-depth list please check Appendix C of the provided PDF. A non-facility is usually an office, but can be a pharmacy, homeless shelter, school, or an independent clinic. For a more in-depth list please check Appendix C of the provided PDF.
 
 # # Comparing Number of Services with Average Submitted Charge Amount against Number of Services with Average Medicare Payment Amount
+
 ```{r}
 ggplot(Placestudy,aes(x=Number.of.Services,y=Average.Submitted.Charge.Amount)) + geom_point(shape=1) + facet_grid(Place.of.Service ~ .) + labs(list(title = "Number of Services & Average Submitted Charge Amount for Place of Service", x = "# of Services", y = "Submitted Charge(mean)"))
 ```
@@ -265,6 +296,7 @@ ggplot(Placestudy,aes(x=Number.of.Services,y=Average.Medicare.Payment.Amount)) +
 ```
 
 # # Comparing Number of Distinct Beneficiary Services with Average Submitted Charge Amount against Number of Services with Average Medicare Payment Amount
+
 ```{r}
 ggplot(Placestudy,aes(x=Number.of.Distinct.Medicare.Beneficiary.Per.Day.Services,y=Average.Submitted.Charge.Amount)) + geom_point(shape=1) + facet_grid(Place.of.Service ~ .) + labs(list(title = "Number of Distinct Beneficiary Services & Average Submitted Charge Amount for Place of Service", x = "# of Beneficiary Services", y = "Submitted Charge(mean)"))
 ```
