@@ -1,0 +1,77 @@
+---
+title: "SpokaneProviders"
+author: "Issy Belzil"
+date: '2017-10-10'
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+head(providerspokane)
+```
+
+```{r}
+library(ggplot2)
+library(dplyr)
+library(tidyr)
+load(providerspokane)
+```
+
+### 1.Are there differences in the number of services, distinct beneficiary per day services, average medicare allowed, charged, and paid amount, and medicare standardized amount differ as a function of Gender, the Provider Type, and Place of Service.
+
+
+#### Studying Gender as a Function of: Number of services, distinct beneficiary per day services, average medicare allowed, charged and paid amount and medicare standardized amount 
+
+Variables: () 
+
+-Number of Services 1 
+-Distinct beneficiary per day services 1
+-Average medicare allowed 1
+-Charged 1 
+-Paid amount 1 
+-Medicare standardized amount 1 
+
+
+```{r}
+Genderstudy=providerspokane %>% select( Gender.of.the.Provider, Number.of.Distinct.Medicare.Beneficiary.Per.Day.Services, Average.Medicare.Allowed.Amount, Average.Submitted.Charge.Amount, Number.of.Services, Average.Medicare.Standardized.Amount, Average.Medicare.Payment.Amount)
+```
+
+```{r}
+str(Genderstudy)
+```
+
+```{r}
+ggplot(Genderstudy, aes(x=reorder(Gender.of.the.Provider, Number.of.Distinct.Medicare.Beneficiary.Per.Day.Services),  y=Number.of.Distinct.Medicare.Beneficiary.Per.Day.Services, )) + geom_bar(stat="identity", alpha=.60)+coord_flip() + labs(list(title = "Gender Study", x = "Gender of Provider", y = "Number of Distinct Medicare Ben. Per Day Service"))
+```
+
+Take out NA from Gender 
+
+Try: 
+facet grids 
+
+
+#### Studying the Provider Type as a Function of: Number of services, distinct beneficiary per day services, average medicare allowed, chargedm and paid amount and medicare standardized amount 
+
+Provider.Type
+
+
+```{r}
+Providerstudy=providerspokane %>% select( Provider.Type, Number.of.Distinct.Medicare.Beneficiary.Per.Day.Services, Average.Medicare.Allowed.Amount, Average.Submitted.Charge.Amount, Number.of.Services, Average.Medicare.Standardized.Amount, Average.Medicare.Payment.Amount)
+```
+
+#### Studying the Place of Service as a Function of: Number of services, distinct beneficiary per day services, average medicare allowed, chargedm and paid amount and medicare standardized amount 
+
+Place.of.Service
+
+```{r}
+PlaceofServicestudy=providerspokane %>% select( Place.of.Service, Number.of.Distinct.Medicare.Beneficiary.Per.Day.Services, Average.Medicare.Allowed.Amount, Average.Submitted.Charge.Amount, Number.of.Services, Average.Medicare.Standardized.Amount, Average.Medicare.Payment.Amount)
+```
+
+
+
+# 2.How do all these variables vary as a function of the type of service that is being provided?
+
+
